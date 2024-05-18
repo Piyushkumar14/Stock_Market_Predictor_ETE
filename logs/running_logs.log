@@ -1,0 +1,889 @@
+[2024-05-16 09:26:22,975: INFO: main: This is a test log message]
+[2024-05-16 14:21:38,432: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-16 14:21:38,437: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-16 14:21:38,438: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-16 14:21:38,438: ERROR: main: yaml file is empty]
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\utils\common.py", line 31, in read_yaml
+    return ConfigBox(content)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 259, in __init__
+    raise BoxValueError("First argument must be mapping or iterable")
+box.exceptions.BoxValueError: First argument must be mapping or iterable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 10, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_01_data_ingestion.py", line 14, in main
+    config = ConfigurationManager()
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\config\configuration.py", line 13, in __init__
+    self.params = read_yaml(params_filepath)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\utils\common.py", line 33, in read_yaml
+    raise ValueError("yaml file is empty")
+ValueError: yaml file is empty
+[2024-05-16 14:22:02,923: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-16 14:22:02,925: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-16 14:22:02,926: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-16 14:22:02,927: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-16 14:22:02,927: INFO: common: created directory at: artifacts]
+[2024-05-16 14:22:02,927: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-16 14:22:02,928: ERROR: main: name 'Path' is not defined]
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 10, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.download_data()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\components\data_ingestion.py", line 20, in download_data
+    logger.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")
+                                                         ^^^^
+NameError: name 'Path' is not defined
+[2024-05-16 14:23:12,974: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-16 14:23:12,975: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-16 14:23:12,975: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-16 14:23:12,976: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-16 14:23:12,976: INFO: common: created directory at: artifacts]
+[2024-05-16 14:23:12,976: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-16 14:23:12,976: ERROR: main: [WinError 2] The system cannot find the file specified: 'artifacts\\data_ingestion\\data.zip']
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 10, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_01_data_ingestion.py", line 17, in main
+    data_ingestion.download_data()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\components\data_ingestion.py", line 21, in download_data
+    logger.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\utils\common.py", line 120, in get_size
+    size_in_kb = round(os.path.getsize(path) / 1024)
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 62, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'artifacts\\data_ingestion\\data.zip'
+[2024-05-16 14:29:19,152: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-16 14:29:19,152: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-16 14:29:19,153: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-16 14:29:19,154: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-16 14:29:19,154: ERROR: main: "'ConfigBox' object has no attribute 'artifacts_roots'"]
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'artifacts_roots'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'artifacts_roots'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'artifacts_roots'. Did you mean: 'artifacts_root'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'artifacts_roots'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'artifacts_roots'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'artifacts_roots'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'artifacts_roots'. Did you mean: 'artifacts_root'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 10, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_01_data_ingestion.py", line 14, in main
+    config = ConfigurationManager()
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\config\configuration.py", line 16, in __init__
+    create_directories([self.config.artifacts_roots])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'artifacts_roots'". Did you mean: 'artifacts_root'?
+[2024-05-16 14:29:43,794: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-16 14:29:43,795: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-16 14:29:43,796: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-16 14:29:43,796: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-16 14:29:43,797: ERROR: main: "'ConfigBox' object has no attribute 'artifacts_roots'"]
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'artifacts_roots'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'artifacts_roots'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'artifacts_roots'. Did you mean: 'artifacts_root'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'artifacts_roots'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'artifacts_roots'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'artifacts_roots'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'artifacts_roots'. Did you mean: 'artifacts_root'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 10, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_01_data_ingestion.py", line 14, in main
+    config = ConfigurationManager()
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\config\configuration.py", line 16, in __init__
+    create_directories([self.config.artifacts_roots])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'artifacts_roots'". Did you mean: 'artifacts_root'?
+[2024-05-16 14:30:20,239: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-16 14:30:20,240: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-16 14:30:20,241: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-16 14:30:20,241: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-16 14:30:20,241: INFO: common: created directory at: artifacts]
+[2024-05-16 14:30:20,242: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-16 14:30:25,305: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 300940
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "d076672f1746d4eb167a00b3b2c7f6458cc7ecfa4fa23f72f3f26faa16aaae43"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 3FF8:0957:8E45D:C04E6:6645CB26
+Accept-Ranges: bytes
+Date: Thu, 16 May 2024 09:00:23 GMT
+Via: 1.1 varnish
+X-Served-By: cache-maa10249-MAA
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1715850023.447134,VS0,VE312
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: b306bba45d9fd37df4cb24d9ebbd8ff3a00246d8
+Expires: Thu, 16 May 2024 09:05:23 GMT
+Source-Age: 0
+
+]
+[2024-05-16 14:30:25,319: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-16 20:11:19,172: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-16 20:11:19,173: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-16 20:11:19,175: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-16 20:11:19,176: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-16 20:11:19,176: INFO: common: created directory at: artifacts]
+[2024-05-16 20:11:19,177: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-16 20:11:19,177: INFO: data_ingestion: file already exists of size: ~ 294 KB]
+[2024-05-16 20:11:19,185: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-16 20:11:19,186: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-16 20:11:19,187: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-16 20:11:19,188: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-16 20:11:19,189: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-16 20:11:19,190: INFO: common: created directory at: artifacts]
+[2024-05-16 20:11:19,190: ERROR: main: "'ConfigBox' object has no attribute 'data_validation'"]
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 23, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_02_data_validation.py", line 15, in main
+    data_ingestion_config = config.get_data_validation_config()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\config\configuration.py", line 33, in get_data_validation_config
+    config = self.config.data_validation
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'data_validation'"
+[2024-05-17 19:59:36,129: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-17 19:59:36,131: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 19:59:36,134: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 19:59:36,142: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 19:59:36,143: INFO: common: created directory at: artifacts]
+[2024-05-17 19:59:36,144: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-17 19:59:36,144: INFO: data_ingestion: file already exists of size: ~ 294 KB]
+[2024-05-17 19:59:36,158: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-17 19:59:36,158: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-17 19:59:36,159: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 19:59:36,160: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 19:59:36,161: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 19:59:36,161: INFO: common: created directory at: artifacts]
+[2024-05-17 19:59:36,162: ERROR: main: "'ConfigBox' object has no attribute 'data_validation'"]
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 23, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_02_data_validation.py", line 15, in main
+    data_ingestion_config = config.get_data_validation_config()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\config\configuration.py", line 33, in get_data_validation_config
+    config = self.config.data_validation
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'data_validation'"
+[2024-05-17 20:11:11,529: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-17 20:11:11,530: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 20:11:11,531: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 20:11:11,532: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 20:11:11,532: INFO: common: created directory at: artifacts]
+[2024-05-17 20:11:11,533: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-17 20:11:12,904: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 300940
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "d076672f1746d4eb167a00b3b2c7f6458cc7ecfa4fa23f72f3f26faa16aaae43"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: C200:08AE:1B8E21:23D424:66476C88
+Accept-Ranges: bytes
+Date: Fri, 17 May 2024 14:41:12 GMT
+Via: 1.1 varnish
+X-Served-By: cache-maa10248-MAA
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1715956873.578743,VS0,VE307
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: ee8dcf2e28cb0d9d11a3e782b20390e7717b8095
+Expires: Fri, 17 May 2024 14:46:12 GMT
+Source-Age: 0
+
+]
+[2024-05-17 20:11:12,919: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-17 20:11:12,919: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-17 20:11:12,920: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 20:11:12,920: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 20:11:12,922: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 20:11:12,923: INFO: common: created directory at: artifacts]
+[2024-05-17 20:11:12,923: ERROR: main: "'ConfigBox' object has no attribute 'data_validation'"]
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 23, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_02_data_validation.py", line 15, in main
+    data_ingestion_config = config.get_data_validation_config()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\config\configuration.py", line 33, in get_data_validation_config
+    config = self.config.data_validation
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'data_validation'"
+[2024-05-17 20:15:19,413: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-17 20:15:19,414: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 20:15:19,415: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 20:15:19,416: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 20:15:19,416: INFO: common: created directory at: artifacts]
+[2024-05-17 20:15:19,417: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-17 20:15:19,417: INFO: data_ingestion: file already exists of size: ~ 294 KB]
+[2024-05-17 20:15:19,422: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-17 20:15:19,422: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-17 20:15:19,423: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 20:15:19,424: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 20:15:19,425: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 20:15:19,425: INFO: common: created directory at: artifacts]
+[2024-05-17 20:15:19,425: ERROR: main: "'ConfigBox' object has no attribute 'data_validation'"]
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 23, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_02_data_validation.py", line 15, in main
+    data_ingestion_config = config.get_data_validation_config()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\config\configuration.py", line 33, in get_data_validation_config
+    config = self.config.data_validation
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'data_validation'"
+[2024-05-17 20:21:29,248: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-17 20:21:29,248: ERROR: main: Argument path_to_yaml of type <class 'str'> to <function read_yaml at 0x000001B049DCAAC0> does not match annotation type <class 'pathlib.Path'>]
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 11, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_01_data_ingestion.py", line 14, in main
+    config = ConfigurationManager()
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\config\configuration.py", line 14, in __init__
+    self.config = read_yaml(config_filepath)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\ensure\main.py", line 870, in __call__
+    raise EnsureError(msg.format(arg=arg, f=self.f, t=templ, valt=type(value)))
+ensure.main.EnsureError: Argument path_to_yaml of type <class 'str'> to <function read_yaml at 0x000001B049DCAAC0> does not match annotation type <class 'pathlib.Path'>
+[2024-05-17 20:21:43,985: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-17 20:21:43,986: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 20:21:43,987: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 20:21:43,988: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 20:21:43,988: INFO: common: created directory at: artifacts]
+[2024-05-17 20:21:43,988: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-17 20:21:43,989: INFO: data_ingestion: file already exists of size: ~ 294 KB]
+[2024-05-17 20:21:43,995: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-17 20:21:43,995: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-17 20:21:43,996: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 20:21:43,996: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 20:21:43,997: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 20:21:43,998: INFO: common: created directory at: artifacts]
+[2024-05-17 20:21:43,998: ERROR: main: "'ConfigBox' object has no attribute 'data_validation'"]
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'data_validation'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'data_validation'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 23, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_02_data_validation.py", line 15, in main
+    data_ingestion_config = config.get_data_validation_config()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\config\configuration.py", line 35, in get_data_validation_config
+    config = self.config.data_validation
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\PycharmProjects\pythonProject\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'data_validation'"
+[2024-05-17 20:22:14,524: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-17 20:22:14,525: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 20:22:14,526: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 20:22:14,527: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 20:22:14,527: INFO: common: created directory at: artifacts]
+[2024-05-17 20:22:14,527: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-17 20:22:14,528: INFO: data_ingestion: file already exists of size: ~ 294 KB]
+[2024-05-17 20:22:14,535: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-17 20:22:14,535: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-17 20:22:14,536: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 20:22:14,536: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 20:22:14,537: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 20:22:14,537: INFO: common: created directory at: artifacts]
+[2024-05-17 20:22:14,538: INFO: common: created directory at: artifacts/data_validation]
+[2024-05-17 20:22:14,539: ERROR: main: [Errno 2] No such file or directory: 'artifacts/data_ingestion/winequality-red.csv']
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 23, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_02_data_validation.py", line 17, in main
+    data_ingestion.validate_all_columns()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\components\data_validation.py", line 33, in validate_all_columns
+    raise e
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\components\data_validation.py", line 15, in validate_all_columns
+    data = pd.read_csv(self.config.unzip_data_dir)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\pr141\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/data_ingestion/winequality-red.csv'
+[2024-05-17 20:22:36,113: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-17 20:22:36,114: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 20:22:36,115: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 20:22:36,115: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 20:22:36,116: INFO: common: created directory at: artifacts]
+[2024-05-17 20:22:36,116: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-17 20:22:36,116: INFO: data_ingestion: file already exists of size: ~ 294 KB]
+[2024-05-17 20:22:36,122: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-17 20:22:36,123: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-17 20:22:36,124: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 20:22:36,124: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 20:22:36,125: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 20:22:36,125: INFO: common: created directory at: artifacts]
+[2024-05-17 20:22:36,126: INFO: common: created directory at: artifacts/data_validation]
+[2024-05-17 20:22:36,127: ERROR: main: [Errno 2] No such file or directory: 'artifacts/data_ingestion/winequality-red.csv']
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 23, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_02_data_validation.py", line 17, in main
+    data_ingestion.validate_all_columns()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\components\data_validation.py", line 33, in validate_all_columns
+    raise e
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\components\data_validation.py", line 15, in validate_all_columns
+    data = pd.read_csv(self.config.unzip_data_dir)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pr141\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\pr141\AppData\Local\Programs\Python\Python312\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/data_ingestion/winequality-red.csv'
+[2024-05-17 20:22:46,453: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-17 20:22:46,455: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 20:22:46,456: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 20:22:46,456: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 20:22:46,457: INFO: common: created directory at: artifacts]
+[2024-05-17 20:22:46,458: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-17 20:22:46,458: INFO: data_ingestion: file already exists of size: ~ 294 KB]
+[2024-05-17 20:22:46,465: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-17 20:22:46,465: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-17 20:22:46,466: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-17 20:22:46,467: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-17 20:22:46,468: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-17 20:22:46,468: INFO: common: created directory at: artifacts]
+[2024-05-17 20:22:46,469: INFO: common: created directory at: artifacts/data_validation]
+[2024-05-17 20:22:46,499: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-05-18 12:06:49,405: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-18 12:06:49,420: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-18 12:06:49,425: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-18 12:06:49,426: INFO: common: created directory at: artifacts]
+[2024-05-18 12:06:49,427: INFO: common: created directory at: artifacts/data_transformation]
+[2024-05-18 12:08:36,755: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-18 12:08:36,757: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-18 12:08:36,758: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-18 12:08:36,759: INFO: common: created directory at: artifacts]
+[2024-05-18 12:08:36,759: INFO: common: created directory at: artifacts/data_transformation]

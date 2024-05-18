@@ -1,0 +1,12 @@
+COLUMNS:
+  Date: object
+  Open: float64
+  High: float64
+  Low: float64
+  Close: float64
+  Volume: float64
+  Dividends: float64
+  Stock Splits: float64
+
+TARGET_COLUMNS:
+  name: Close
