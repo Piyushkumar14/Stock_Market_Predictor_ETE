@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Web App</title>
-        <link rel="icon" type="image/x-icon" href="../static/asset/favicon.ico" />
+        <title>Prediction</title>
+        <link rel="icon" type="image/x-icon" href="../static/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
-        <script src=" https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
@@ -35,88 +35,19 @@
             </div>
         </nav>
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('../static/asset/img/bull.jpg')">
+        <header class="masthead" style="background-image: url('../static/asset/img/wine.gif')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Stock Price Prediction</h1>
-                            <span class="subheading">A Stock Price Prediction Web App</span>
+                            <h1>Wine Quality</h1>
+                             <h1>{{prediction}}</h1>
+                            <span class="subheading"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-
-
-        <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
-            <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Form-v9 by Colorlib</title>
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- Font-->
-	<link rel="stylesheet" type="text/css" href="../static/css2/nunito-font.css">
-	<!-- Main Style Css -->
-    <link rel="stylesheet" href="../static/css2/style.css"/>
-</head>
-<body class="form-v9">
-	<div class="page-content">
-		<div class="form-v9-content" style="background-image: url('../static/asset/img/form-v9.jpg')">
-			<form class="form-detail" action="/predict" method="post">
-				<h2>Please Fill The Information</h2>
-				<div class="form-row-total">
-
-					<div class="form-row">
-                        <label for="date"> Date:</label>
-						<input type="text" name="date" id="date" class="input-text" placeholder="date" required>
-					</div>
-
-					<div class="form-row">
-                        <label for="open"> Opening Price:</label>
-						<input type="text" name="open" id="open" class="input-text" placeholder="open" required>
-					</div>
-
-				</div>
-
-                <div class="form-row-total">
-
-                    <div class="form-row">
-                        <label for="high"> Highest:</label>
-						<input type="text" name="high" id="high" class="input-text" placeholder="high" required>
-					</div>
-
-                    <div class="form-row">
-                        <label for="low"> Lowest:</label>
-						<input type="text" name="low" id="low" class="input-text" placeholder="low" required>
-					</div>
-
-				</div>
-
-
-                <div class="form-row-total">
-
-                    <div class="form-row">
-                        <label for="volume"> volume:</label>
-						<input type="text" name="volume" id="volume" class="input-text" placeholder="volume" required>
-					</div>
-
-				</div>
-
-
-				<div class="form-row-last">
-					<input type="submit" name="register" class="register" value="Predict">
-				</div>
-			</form>
-		</div>
-	</div>
-</body>
-</html>
-
-        </div>
 
 
         <!-- Footer-->
@@ -134,7 +65,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://www.youtube.com/dswithbappy">
+                                <a href="https://www.youtube.com/">
                                     <span class="fa-stack fa-lg">
                                         <i class="fas fa-circle fa-stack-2x"></i>
                                         <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
@@ -157,7 +88,7 @@
             </div>
         </footer>
         <!-- Bootstrap core JS-->
-        <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="../static/js/script.js"></script>
     </body>

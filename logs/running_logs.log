@@ -1826,3 +1826,328 @@ x==========x]
 [2024-05-21 14:15:41,273: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
 
 x==========x]
+[2024-05-21 14:40:09,204: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-21 14:40:09,205: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:40:09,206: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:40:09,207: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:40:09,207: INFO: common: created directory at: artifacts]
+[2024-05-21 14:40:09,207: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-21 14:40:10,614: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 300940
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "d076672f1746d4eb167a00b3b2c7f6458cc7ecfa4fa23f72f3f26faa16aaae43"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 5904:14FBEE:2668D9:33D91F:664C64F1
+Accept-Ranges: bytes
+Date: Tue, 21 May 2024 09:10:10 GMT
+Via: 1.1 varnish
+X-Served-By: cache-maa10243-MAA
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1716282610.941991,VS0,VE309
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: d31acbe1bcf555d744a2dd6b3b530e8919445fce
+Expires: Tue, 21 May 2024 09:15:10 GMT
+Source-Age: 0
+
+]
+[2024-05-21 14:40:10,621: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:40:10,621: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-21 14:40:10,623: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:40:10,624: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:40:10,625: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:40:10,625: INFO: common: created directory at: artifacts]
+[2024-05-21 14:40:10,626: INFO: common: created directory at: artifacts/data_validation]
+[2024-05-21 14:40:10,642: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:40:10,642: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-05-21 14:40:10,644: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:40:10,644: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:40:10,645: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:40:10,646: INFO: common: created directory at: artifacts]
+[2024-05-21 14:40:10,646: INFO: common: created directory at: artifacts/data_transformation]
+[2024-05-21 14:40:10,841: INFO: data_transformation: Splitted data into training and test sets]
+[2024-05-21 14:40:10,841: INFO: data_transformation: (12225, 8)]
+[2024-05-21 14:40:10,841: INFO: data_transformation: (4075, 8)]
+[2024-05-21 14:40:10,842: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:40:10,843: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-05-21 14:40:10,844: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:40:10,845: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:40:10,846: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:40:10,846: INFO: common: created directory at: artifacts]
+[2024-05-21 14:40:10,847: INFO: common: created directory at: artifacts/model_trainer]
+[2024-05-21 14:40:14,885: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:40:14,886: INFO: main: >>>>>> stage Model Evaluation stage started <<<<<<]
+[2024-05-21 14:40:14,888: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:40:14,888: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:40:14,889: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:40:14,889: INFO: common: created directory at: artifacts]
+[2024-05-21 14:40:14,889: ERROR: main: "'ConfigBox' object has no attribute 'elasticnet'"]
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\env\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ElasticNet'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\env\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\env\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ElasticNet'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\env\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'ElasticNet'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\env\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\env\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'ElasticNet'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\env\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'elasticnet'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\env\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\env\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'elasticnet'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\env\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'elasticnet'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\Stock_Market_Predictor_ETE\main.py", line 59, in <module>
+    obj.main()
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\pipeline\stage_05_model_evaluation.py", line 15, in main
+    model_training_config = config.get_model_evaluation_config()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\src\stock_predictor\config\configuration.py", line 80, in get_model_evaluation_config
+    params = self.params.ElasticNet
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\env\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\Stock_Market_Predictor_ETE\env\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'elasticnet'"
+[2024-05-21 14:41:31,383: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-21 14:41:31,385: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:41:31,385: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:41:31,386: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:41:31,387: INFO: common: created directory at: artifacts]
+[2024-05-21 14:41:31,387: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-21 14:41:32,178: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 300940
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "d076672f1746d4eb167a00b3b2c7f6458cc7ecfa4fa23f72f3f26faa16aaae43"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 5904:14FBEE:2668D9:33D91F:664C64F1
+Accept-Ranges: bytes
+Date: Tue, 21 May 2024 09:11:31 GMT
+Via: 1.1 varnish
+X-Served-By: cache-maa10238-MAA
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1716282692.781413,VS0,VE1
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: c2ede709bcdcadee16bbb75817f28250c70e3bdd
+Expires: Tue, 21 May 2024 09:16:31 GMT
+Source-Age: 82
+
+]
+[2024-05-21 14:41:32,185: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:41:32,185: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-21 14:41:32,187: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:41:32,187: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:41:32,188: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:41:32,189: INFO: common: created directory at: artifacts]
+[2024-05-21 14:41:32,189: INFO: common: created directory at: artifacts/data_validation]
+[2024-05-21 14:41:32,209: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:41:32,209: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-05-21 14:41:32,211: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:41:32,211: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:41:32,212: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:41:32,212: INFO: common: created directory at: artifacts]
+[2024-05-21 14:41:32,213: INFO: common: created directory at: artifacts/data_transformation]
+[2024-05-21 14:41:32,415: INFO: data_transformation: Splitted data into training and test sets]
+[2024-05-21 14:41:32,415: INFO: data_transformation: (12225, 8)]
+[2024-05-21 14:41:32,417: INFO: data_transformation: (4075, 8)]
+[2024-05-21 14:41:32,417: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:41:32,417: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-05-21 14:41:32,419: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:41:32,419: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:41:32,420: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:41:32,421: INFO: common: created directory at: artifacts]
+[2024-05-21 14:41:32,421: INFO: common: created directory at: artifacts/model_trainer]
+[2024-05-21 14:41:36,431: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:41:36,432: INFO: main: >>>>>> stage Model Evaluation stage started <<<<<<]
+[2024-05-21 14:41:36,434: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:41:36,435: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:41:36,436: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:41:36,436: INFO: common: created directory at: artifacts]
+[2024-05-21 14:41:36,436: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-05-21 14:41:37,814: INFO: common: json file saved at: artifacts\model_evaluation\metrices.json]
+[2024-05-21 14:43:35,251: INFO: main: >>>>>> stage Model Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:46:25,513: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-21 14:46:25,515: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:46:25,516: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:46:25,516: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:46:25,517: INFO: common: created directory at: artifacts]
+[2024-05-21 14:46:25,517: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-21 14:46:25,517: INFO: data_ingestion: file already exists of size: ~ 294 KB]
+[2024-05-21 14:46:25,524: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:46:25,524: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-21 14:46:25,525: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:46:25,526: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:46:25,526: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:46:25,527: INFO: common: created directory at: artifacts]
+[2024-05-21 14:46:25,527: INFO: common: created directory at: artifacts/data_validation]
+[2024-05-21 14:46:25,546: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:46:25,546: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-05-21 14:46:25,548: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:46:25,548: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:46:25,549: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:46:25,550: INFO: common: created directory at: artifacts]
+[2024-05-21 14:46:25,550: INFO: common: created directory at: artifacts/data_transformation]
+[2024-05-21 14:46:25,743: INFO: data_transformation: Splitted data into training and test sets]
+[2024-05-21 14:46:25,744: INFO: data_transformation: (12225, 8)]
+[2024-05-21 14:46:25,744: INFO: data_transformation: (4075, 8)]
+[2024-05-21 14:46:25,744: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:46:25,745: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-05-21 14:46:25,746: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:46:25,746: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:46:25,748: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:46:25,748: INFO: common: created directory at: artifacts]
+[2024-05-21 14:46:25,748: INFO: common: created directory at: artifacts/model_trainer]
+[2024-05-21 14:46:27,912: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2024-05-21 14:46:27,912: INFO: main: >>>>>> stage Model Evaluation stage started <<<<<<]
+[2024-05-21 14:46:27,913: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-21 14:46:27,914: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-21 14:46:27,915: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-05-21 14:46:27,915: INFO: common: created directory at: artifacts]
+[2024-05-21 14:46:27,915: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-05-21 14:46:52,890: INFO: common: json file saved at: artifacts\model_evaluation\metrices.json]
+[2024-05-21 14:48:28,629: INFO: main: >>>>>> stage Model Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-05-21 17:18:38,765: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.85.177:8080]
+[2024-05-21 17:18:38,765: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-21 17:18:38,767: INFO: _internal:  * Restarting with stat]
+[2024-05-21 17:18:39,506: WARNING: _internal:  * Debugger is active!]
+[2024-05-21 17:18:39,511: INFO: _internal:  * Debugger PIN: 289-919-193]
+[2024-05-21 17:18:42,372: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:18:42] "[35m[1mGET / HTTP/1.1[0m" 500 -]
+[2024-05-21 17:18:42,488: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:18:42] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -]
+[2024-05-21 17:18:42,490: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:18:42] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -]
+[2024-05-21 17:18:42,563: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:18:42] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -]
+[2024-05-21 17:18:42,793: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:18:42] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -]
+[2024-05-21 17:26:06,619: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.85.177:8080]
+[2024-05-21 17:26:06,619: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-21 17:26:06,620: INFO: _internal:  * Restarting with stat]
+[2024-05-21 17:26:07,367: WARNING: _internal:  * Debugger is active!]
+[2024-05-21 17:26:07,371: INFO: _internal:  * Debugger PIN: 289-919-193]
+[2024-05-21 17:26:08,727: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:26:08] "GET / HTTP/1.1" 200 -]
+[2024-05-21 17:26:08,896: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:26:08] "GET /static/js/script.js HTTP/1.1" 200 -]
+[2024-05-21 17:26:08,900: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:26:08] "GET /static/css2/nunito-font.css HTTP/1.1" 200 -]
+[2024-05-21 17:26:08,908: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:26:08] "GET /static/css/style.css HTTP/1.1" 200 -]
+[2024-05-21 17:26:08,909: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:26:08] "GET /static/css2/style.css HTTP/1.1" 200 -]
+[2024-05-21 17:26:10,353: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:26:10] "GET /static/asset/img/bull.jpg HTTP/1.1" 200 -]
+[2024-05-21 17:26:10,353: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:26:10] "GET /static/asset/img/form-v9.jpg HTTP/1.1" 200 -]
+[2024-05-21 17:26:10,383: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:26:10] "[33mGET /static/fonts/Nunito/Nunito-Bold.ttf HTTP/1.1[0m" 404 -]
+[2024-05-21 17:26:10,681: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:26:10] "GET /static/asset/favicon.ico HTTP/1.1" 200 -]
+[2024-05-21 17:35:59,433: INFO: _internal:  * Detected change in 'D:\\Projects\\Stock_Market_Predictor_ETE\\app.py', reloading]
+[2024-05-21 17:35:59,524: INFO: _internal:  * Restarting with stat]
+[2024-05-21 17:42:08,188: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.85.177:8080]
+[2024-05-21 17:42:08,188: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-05-21 17:42:08,190: INFO: _internal:  * Restarting with stat]
+[2024-05-21 17:42:08,917: WARNING: _internal:  * Debugger is active!]
+[2024-05-21 17:42:08,922: INFO: _internal:  * Debugger PIN: 289-919-193]
+[2024-05-21 17:42:10,509: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:42:10] "GET / HTTP/1.1" 200 -]
+[2024-05-21 17:42:10,795: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:42:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -]
+[2024-05-21 17:42:10,832: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:42:10] "[36mGET /static/css2/nunito-font.css HTTP/1.1[0m" 304 -]
+[2024-05-21 17:42:10,845: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:42:10] "[36mGET /static/css2/style.css HTTP/1.1[0m" 304 -]
+[2024-05-21 17:42:10,876: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:42:10] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -]
+[2024-05-21 17:42:10,894: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:42:10] "[36mGET /static/asset/img/bull.jpg HTTP/1.1[0m" 304 -]
+[2024-05-21 17:42:10,932: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:42:10] "[36mGET /static/asset/img/form-v9.jpg HTTP/1.1[0m" 304 -]
+[2024-05-21 17:42:10,942: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:42:10] "[33mGET /static/fonts/Nunito/Nunito-Bold.ttf HTTP/1.1[0m" 404 -]
+[2024-05-21 17:42:37,522: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:42:37] "POST /predict HTTP/1.1" 200 -]
+[2024-05-21 17:42:37,622: INFO: _internal: 127.0.0.1 - - [21/May/2024 17:42:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
