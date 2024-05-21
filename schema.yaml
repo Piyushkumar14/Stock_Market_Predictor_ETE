@@ -8,5 +8,5 @@ COLUMNS:
   Dividends: float64
   Stock Splits: float64
 
-TARGET_COLUMNS:
+TARGET_COLUMN:
   name: Close

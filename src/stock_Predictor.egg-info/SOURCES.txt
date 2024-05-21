@@ -7,11 +7,17 @@ src/stock_Predictor.egg-info/dependency_links.txt
 src/stock_Predictor.egg-info/top_level.txt
 src/stock_predictor/__init__.py
 src/stock_predictor/components/__init__.py
+src/stock_predictor/components/data_ingestion.py
+src/stock_predictor/components/data_transformation.py
+src/stock_predictor/components/data_validation.py
 src/stock_predictor/config/__init__.py
 src/stock_predictor/config/configuration.py
 src/stock_predictor/constants/__init__.py
 src/stock_predictor/entity/__init__.py
 src/stock_predictor/entity/config_entity.py
 src/stock_predictor/pipeline/__init__.py
+src/stock_predictor/pipeline/stage_01_data_ingestion.py
+src/stock_predictor/pipeline/stage_02_data_validation.py
+src/stock_predictor/pipeline/stage_03_data_transformation.py
 src/stock_predictor/utils/__init__.py
 src/stock_predictor/utils/common.py
