@@ -16,25 +16,33 @@ def training():
     os.system('python main.py')
     return "Training Succesful...."
 
-@app.route('/predict',methods = ['POST'])
+
+from datetime import datetime
+
+
+@app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
         try:
-            date = float(request.form['date'])
+            date_str = request.form['date']
+            date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+            date_num = (date_obj - datetime(1970, 1, 1)).days
+
             open = float(request.form['open'])
             high = float(request.form['high'])
             low = float(request.form['low'])
             volume = float(request.form['volume'])
-            # free_sulfur_dioxide = float(request.form['free_sulfur_dioxide'])
+            dividend = float(request.form['dividend'])
+            stock_split = float(request.form['stock_split'])
 
-            data = [date, open, high, low, volume]
-            data = np.array(data).reshape(1, 11)
+            data = [date_num, open, high, low, volume, dividend, stock_split]
+            data = np.array(data).reshape(1, -1)  # Adjust the reshape parameters according to your model's input shape
 
             obj = PredictionPipeline()
             prediction = obj.predict(data)
-#
-            return render_template('result.html', prediction = str(prediction))
-#
+
+            return render_template('result.html', prediction=str(prediction))
+
         except Exception as e:
             return "Error: " + str(e)
     else:
